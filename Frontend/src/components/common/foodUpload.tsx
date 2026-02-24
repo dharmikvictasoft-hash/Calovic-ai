@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, type ChangeEvent } from "react";
+import { useEffect, useMemo, useRef, useState, type ChangeEvent } from "react";
 
 type FoodItem = {
   name: string;
@@ -34,6 +34,8 @@ export default function FoodAnalyzer() {
   const [progress, setProgress] = useState(0);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const cameraInputRef = useRef<HTMLInputElement | null>(null);
+  const galleryInputRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
     return () => {
@@ -169,26 +171,37 @@ export default function FoodAnalyzer() {
               )}
 
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 to-transparent px-5 pb-5 pt-12">
-                <div className="flex flex-wrap items-center gap-2">
-                  <label className="cursor-pointer rounded-full bg-white/95 px-4 py-2 text-sm font-semibold text-[#141820] shadow-md transition hover:bg-white">
-                    {image ? "Retake with camera" : "Take photo"}
-                    <input
-                      type="file"
-                      accept="image/*"
-                      capture="environment"
-                      onChange={handleImageChange}
-                      className="sr-only"
-                    />
-                  </label>
-                  <label className="cursor-pointer rounded-full bg-white/95 px-4 py-2 text-sm font-semibold text-[#141820] shadow-md transition hover:bg-white">
-                    {image ? "Choose from gallery" : "Upload photo"}
-                    <input
-                      type="file"
-                      accept="image/*"
-                      onChange={handleImageChange}
-                      className="sr-only"
-                    />
-                  </label>
+                <input
+                  ref={cameraInputRef}
+                  type="file"
+                  accept="image/*"
+                  capture="environment"
+                  onChange={handleImageChange}
+                  className="sr-only"
+                />
+                <input
+                  ref={galleryInputRef}
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageChange}
+                  className="sr-only"
+                />
+
+                <div className="grid w-full grid-cols-2 gap-2 sm:flex sm:w-auto sm:flex-wrap sm:items-center">
+                  <button
+                    type="button"
+                    onClick={() => cameraInputRef.current?.click()}
+                    className="rounded-full bg-white/95 px-4 py-2.5 text-sm font-semibold text-[#141820] shadow-md transition hover:bg-white"
+                  >
+                    {image ? "Retake" : "Camera"}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => galleryInputRef.current?.click()}
+                    className="rounded-full bg-white/95 px-4 py-2.5 text-sm font-semibold text-[#141820] shadow-md transition hover:bg-white"
+                  >
+                    {image ? "Gallery" : "Upload"}
+                  </button>
                   <button
                     type="button"
                     onClick={handleUpload}
