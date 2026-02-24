@@ -171,11 +171,20 @@ export default function FoodAnalyzer() {
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 to-transparent px-5 pb-5 pt-12">
                 <div className="flex flex-wrap items-center gap-2">
                   <label className="cursor-pointer rounded-full bg-white/95 px-4 py-2 text-sm font-semibold text-[#141820] shadow-md transition hover:bg-white">
-                    {image ? "Change photo" : "Choose photo"}
+                    {image ? "Retake with camera" : "Take photo"}
                     <input
                       type="file"
                       accept="image/*"
                       capture="environment"
+                      onChange={handleImageChange}
+                      className="sr-only"
+                    />
+                  </label>
+                  <label className="cursor-pointer rounded-full bg-white/95 px-4 py-2 text-sm font-semibold text-[#141820] shadow-md transition hover:bg-white">
+                    {image ? "Choose from gallery" : "Upload photo"}
+                    <input
+                      type="file"
+                      accept="image/*"
                       onChange={handleImageChange}
                       className="sr-only"
                     />
