@@ -154,7 +154,7 @@ export default function FoodAnalyzer() {
     <div className="mx-auto mt-3 w-full max-w-[1400px] px-2 md:px-3">
       <style>{shimmerStyles}</style>
       <section className="rounded-[30px] border border-[#d7dbe2] bg-[#f7f8fb] p-3 shadow-[0_24px_60px_rgba(20,25,35,0.12)] sm:p-5">
-        <div className="grid items-start gap-4 xl:grid-cols-[1.2fr_1fr]">
+        <div className="grid items-start gap-4 xl:grid-cols-2">
           <div className="self-start overflow-hidden rounded-[28px] border border-[#d7dbe2] bg-[#e8ecf3]">
             <div className="relative">
               {preview ? (
