@@ -138,7 +138,6 @@ function AIChat() {
           <div className="mb-3 flex items-center justify-between">
             <h2 className="font-display text-base font-semibold text-[#1f2937] sm:text-lg">AI Chat</h2>
             <div className="flex items-center gap-2">
-              <p className="text-sm text-[#6b7280]">Gemini</p>
               <button
                 type="button"
                 onClick={() => setIsOpen(false)}
