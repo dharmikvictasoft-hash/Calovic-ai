@@ -170,7 +170,7 @@ export default function FoodAnalyzer() {
                 </div>
               )}
 
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 to-transparent px-5 pb-5 pt-12">
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/45 to-transparent px-3 pb-3 pt-3 sm:px-5 sm:pb-5 sm:pt-10">
                 <input
                   ref={cameraInputRef}
                   type="file"
@@ -187,18 +187,18 @@ export default function FoodAnalyzer() {
                   className="sr-only"
                 />
 
-                <div className="grid w-full grid-cols-2 gap-2 sm:flex sm:w-auto sm:flex-wrap sm:items-center">
+                <div className="flex flex-wrap items-center justify-center gap-2 sm:justify-start">
                   <button
                     type="button"
                     onClick={() => cameraInputRef.current?.click()}
-                    className="rounded-full bg-white/95 px-4 py-2.5 text-sm font-semibold text-[#141820] shadow-md transition hover:bg-white"
+                    className="rounded-full bg-white/95 px-3 py-2 text-xs font-semibold text-[#141820] shadow-md transition hover:bg-white sm:px-4 sm:py-2.5 sm:text-sm"
                   >
                     {image ? "Retake" : "Camera"}
                   </button>
                   <button
                     type="button"
                     onClick={() => galleryInputRef.current?.click()}
-                    className="rounded-full bg-white/95 px-4 py-2.5 text-sm font-semibold text-[#141820] shadow-md transition hover:bg-white"
+                    className="rounded-full bg-white/95 px-3 py-2 text-xs font-semibold text-[#141820] shadow-md transition hover:bg-white sm:px-4 sm:py-2.5 sm:text-sm"
                   >
                     {image ? "Gallery" : "Upload"}
                   </button>
@@ -206,7 +206,7 @@ export default function FoodAnalyzer() {
                     type="button"
                     onClick={handleUpload}
                     disabled={loading || !image}
-                    className="rounded-full bg-[#1b1d26] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#282b35] disabled:cursor-not-allowed disabled:opacity-60"
+                    className="rounded-full bg-[#1b1d26] px-3 py-2 text-xs font-semibold text-white transition hover:bg-[#282b35] disabled:cursor-not-allowed disabled:opacity-60 sm:px-4 sm:text-sm"
                   >
                     {loading ? "Analyzing..." : "Scan Meal"}
                   </button>
