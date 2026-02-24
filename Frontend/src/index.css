@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Sora:wght@600;700;800&display=swap");
+@import "tailwindcss";
+
+:root {
+  --font-display: "Sora", "Segoe UI", "Trebuchet MS", sans-serif;
+  --font-body: "Manrope", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+p,
+span,
+button,
+input,
+textarea,
+select,
+label {
+  font-family: var(--font-body);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@keyframes sparklePulse {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.streak-pill .sparkle-star {
+  position: absolute;
+  color: #f59e0b;
+  font-size: 14px;
+  line-height: 1;
+  text-shadow: 0 0 10px rgba(245, 158, 11, 0.65);
+  animation: sparklePulse 1.6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.streak-pill .sparkle-star-1 {
+  top: -5px;
+  right: 10px;
+}
+
+.streak-pill .sparkle-star-2 {
+  bottom: -4px;
+  left: 14px;
+  animation-delay: 0.35s;
+}
+
+.streak-pill .sparkle-star-3 {
+  top: 50%;
+  right: -6px;
+  transform: translateY(-50%);
+  animation-delay: 0.7s;
+}
+
+.streak-pill .sparkle-star-4 {
+  top: -6px;
+  left: 10px;
+  animation-delay: 0.15s;
+}
+
+.streak-pill .sparkle-star-5 {
+  top: 50%;
+  left: -6px;
+  transform: translateY(-50%);
+  animation-delay: 0.55s;
+}
+
+.streak-pill .sparkle-star-6 {
+  bottom: -5px;
+  right: 12px;
+  animation-delay: 0.9s;
+}

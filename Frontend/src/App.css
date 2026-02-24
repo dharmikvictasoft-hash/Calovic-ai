@@ -1,0 +1,33 @@
+@keyframes avgstep-shine-sweep {
+  0% {
+    left: -55%;
+  }
+  100% {
+    left: 120%;
+  }
+}
+
+.avgstep-fill {
+  position: relative;
+  overflow: hidden;
+}
+
+.avgstep-shine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -55%;
+  width: 42%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.28) 45%,
+    rgba(255, 255, 255, 0.68) 50%,
+    rgba(255, 255, 255, 0.28) 55%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-18deg);
+  animation: avgstep-shine-sweep 3.8s ease-in-out infinite;
+  pointer-events: none;
+}
